@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+
+import NavBar from "./components/NavBar";
+import Dashboard from "./components/Dashboard";
+import Budget from "./components/Budget";
+import Retirement from "./components/Retirement";
+import ProsCons from "./components/ProsCons";
 
 function App() {
-  return (
-    <div className="App">
-        <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-                Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Learn React
-            </a>
-        </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<Dashboard />}/>
+                    <Route path="/budget" element={<Budget />}/>
+                    <Route path="/retirement" element={<Retirement />}/>
+                    <Route path="/pros-cons" element={<ProsCons />}/>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
+//
+// <Route path="/budget">
+//     <Budget />
+// </Route>
+// <Route path="/retirement">
+//     <Retirement />
+// </Route>
+// <Route path="/pros-cons">
+//     <ProsCons />
+// </Route>
