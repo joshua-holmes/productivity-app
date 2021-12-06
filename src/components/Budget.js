@@ -8,8 +8,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
-import { TableCell, TableContainer, TableRow, Table } from "@mui/material";
-import Grid from "@mui/material/Grid"
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import Table from "@mui/material/Table";
+import TableRow from "@mui/material/TableRow";
+import Grid from "@mui/material/Grid";
 
 function Budget() {
   const [income, setIncome] = useState([]); // stores incomes
@@ -67,7 +70,7 @@ function Budget() {
         setErrorIn(true);
       }
     } else {
-        setErrorIn(true);
+      setErrorIn(true);
     }
   }
 
@@ -106,9 +109,13 @@ function Budget() {
     // an array of our income list items
     return (
       <TableRow key={income.indexOf(inc)}>
-        <TableCell align="left" sx={{ width: '33%' }}>{inc.name}</TableCell>
-        <TableCell align="center" sx={{ width: '33%' }}>{inc.amount}</TableCell>
-        <TableCell align="right" sx={{ width: '33%' }}>
+        <TableCell align="left" sx={{ width: "33%" }}>
+          {inc.name}
+        </TableCell>
+        <TableCell align="center" sx={{ width: "33%" }}>
+          {inc.amount}
+        </TableCell>
+        <TableCell align="right" sx={{ width: "33%" }}>
           <IconButton onClick={() => handleIncomeRemove(inc.name)}>
             <DeleteIcon />
           </IconButton>
@@ -120,14 +127,18 @@ function Budget() {
   const renderExpenses = expenses.map((exp) => {
     return (
       <TableRow key={expenses.indexOf(exp)}>
-      <TableCell align="left" sx={{ width: '33%' }}>{exp.name}</TableCell>
-      <TableCell align="center" sx={{ width: '33%' }}>{exp.amount}</TableCell>
-      <TableCell align="right" sx={{ width: '33%' }}>
-        <IconButton onClick={() => handleExpenseRemove(exp.name)}>
-          <DeleteIcon />
-        </IconButton>
-      </TableCell>
-    </TableRow>
+        <TableCell align="left" sx={{ width: "33%" }}>
+          {exp.name}
+        </TableCell>
+        <TableCell align="center" sx={{ width: "33%" }}>
+          {exp.amount}
+        </TableCell>
+        <TableCell align="right" sx={{ width: "33%" }}>
+          <IconButton onClick={() => handleExpenseRemove(exp.name)}>
+            <DeleteIcon />
+          </IconButton>
+        </TableCell>
+      </TableRow>
     );
   });
 
@@ -160,7 +171,9 @@ function Budget() {
       <Typography variant="h4" gutterBottom>
         Income
       </Typography>
-      <TableContainer ><Table>{renderIncome}</Table></TableContainer>
+      <TableContainer>
+        <Table>{renderIncome}</Table>
+      </TableContainer>
       <FormControl error={errorIn}>
         <FormHelperText sx={{ m: 1 }} color="warning">
           Be sure to enter a unique name and an amount
@@ -198,10 +211,12 @@ function Budget() {
       <Typography variant="h4" gutterBottom>
         Expenses
       </Typography>
-      <TableContainer ><Table>{renderExpenses}</Table></TableContainer>
+      <TableContainer>
+        <Table>{renderExpenses}</Table>
+      </TableContainer>
       <FormControl error={errorExp}>
         <FormHelperText sx={{ m: 1 }} color="warning">
-        Be sure to enter a unique name and an amount
+          Be sure to enter a unique name and an amount
         </FormHelperText>
 
         <FormGroup row>

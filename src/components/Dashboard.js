@@ -1,5 +1,9 @@
+import SideNav from "./SideNav";
+
 function Dashboard() {
-    return <h1>Dashboard</h1>
+    return <>
+        <SideNav />
+    </>
 }
 
 export default Dashboard;
