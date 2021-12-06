@@ -3,6 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 import Input from "@mui/material/Input"
 import InputAdornment from '@mui/material/InputAdornment';
 import { useState } from "react";
+import Grid from '@mui/material/Grid';
 
 function InputField({ name, message, onChange, formData, symbol, symbolPosition, type }) {
     const [ formInputSelected, setFormInputSelected ] = useState()
@@ -15,33 +16,37 @@ function InputField({ name, message, onChange, formData, symbol, symbolPosition,
         }
     }
     const formControlStyles = {
-        maxWidth: "600px", // Switch to using sm with responsive design
         display: "block",
-        margin: "auto", // Make 20px for sm when we get responsive design working
     }
     const inputStyles = {
         width: "100%",
     }
     return (
-        <FormControl style={formControlStyles} sx={{ m: 1 }} variant="standard">
-            <InputLabel htmlFor={name}>
-                {message}
-            </InputLabel>
-            <Input
-                id={name}
-                label={message}
-                name={name}
-                variant="outlined"
-                startAdornment={symbolPosition === "end" ? null : getAdornment("start")}
-                endAdornment={symbolPosition === "end" ? getAdornment("end") : null}
-                onFocus={() => setFormInputSelected(true)}
-                onBlur={() => setFormInputSelected(false)}
-                style={inputStyles}
-                onChange={onChange}
-                value={formData[name] || ""}
-                type={type}
-            />
-        </FormControl>
+        <>
+            <Grid item xs={0} md={4} />
+            <Grid item xs={12} md={4}>
+                <FormControl style={formControlStyles} sx={{ m: 1 }} variant="standard">
+                    <InputLabel htmlFor={name}>
+                        {message}
+                    </InputLabel>
+                    <Input
+                        id={name}
+                        label={message}
+                        name={name}
+                        variant="outlined"
+                        startAdornment={symbolPosition === "end" ? null : getAdornment("start")}
+                        endAdornment={symbolPosition === "end" ? getAdornment("end") : null}
+                        onFocus={() => setFormInputSelected(true)}
+                        onBlur={() => setFormInputSelected(false)}
+                        style={inputStyles}
+                        onChange={onChange}
+                        value={formData[name] || ""}
+                        type={type}
+                    />
+                </FormControl>
+            </Grid>
+            <Grid item xs={0} md={4} />
+        </>
     )
 }
 
