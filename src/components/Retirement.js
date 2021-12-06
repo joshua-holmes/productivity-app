@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import InputField from "./InputField";
 import { useState } from "react";
 import Grid from '@mui/material/Grid';
+import MyLineChart from "./MyLineChart";
 
 let dollarUSLocale = Intl.NumberFormat("en-US", {
     style: "currency",
@@ -11,14 +12,20 @@ let dollarUSLocale = Intl.NumberFormat("en-US", {
 });
 
 function Retirement() {
-    const [ formData, setFormData ] = useState({ rate: 0.06 });
+    const [ formData, setFormData ] = useState({ rate: 0.08 });
+    const graphData = [];
     let result = formData.initial || 0;
     for ( let i = 0; i < (formData.goalYear * 12); i++ ) {
         result *= 1 + formData.rate/12
         result += formData.monthly || 0
+        console.log("I", i);
+        if ( (i + 1) % 12 === 0 ) {
+            graphData.push({
+                years: (i + 1) / 12,
+                dollars: parseFloat(result.toFixed(2)),
+            })
+        }
     }
-
-    console.log(formData);
     function handleSubmit(e) {
         e.preventDefault();
     }
@@ -35,6 +42,8 @@ function Retirement() {
             [e.target.name]: value,
         })
     }
+
+
 
     return (
         <>
@@ -71,6 +80,11 @@ function Retirement() {
                             <Button type="submit">Submit</Button>
                         </Grid>
                     </Grid>
+                </Box>
+                <Box>
+
+                    <MyLineChart data={graphData}/>
+
                 </Box>
                 <Typography variant="p">{dollarUSLocale.format(result)}</Typography>
             </main>
