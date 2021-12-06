@@ -24,13 +24,3 @@ function App() {
 }
 
 export default App;
-//
-// <Route path="/budget">
-//     <Budget />
-// </Route>
-// <Route path="/retirement">
-//     <Retirement />
-// </Route>
-// <Route path="/pros-cons">
-//     <ProsCons />
-// </Route>
