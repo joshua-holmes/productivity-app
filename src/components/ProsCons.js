@@ -77,7 +77,7 @@ function ProsCons() {
 
   return (
     <div>
-      <h1>Pros and Cons List</h1>
+        <Typography variant="h2">Pros and Cons List</Typography>
       <TextField
         id="standard-basic"
         label="List name"
@@ -97,7 +97,7 @@ function ProsCons() {
           <Typography variant="h4" gutterBottom component="div">
             Cons
           </Typography>
-          {renderConsArray}
+          <List>{renderConsArray}</List>
         </Grid>
       </Grid>
 
