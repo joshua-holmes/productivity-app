@@ -1,19 +1,15 @@
 import { useState } from "react";
-// import ListItemContainer from "./ListItem";
-
 import Typography from "@mui/material/Typography";
 import FormGroup from "@mui/material/FormGroup";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import AddIcon from "@mui/icons-material/Add";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import { TableCell, TableContainer, TableRow, Table } from "@mui/material";
+import Grid from "@mui/material/Grid"
 
 function Budget() {
   const [income, setIncome] = useState([]); // stores incomes
@@ -37,6 +33,7 @@ function Budget() {
 
   function handleChangeTextExpense(e) {
     e.preventDefault();
+    setErrorExp(false);
     setExpenseNameField(e.target.value);
   }
 
@@ -67,17 +64,10 @@ function Budget() {
         setIncomeNameField(""); // resets fields after submit
         setIncomeAmountField("");
       } else {
-        alert("duplicate!"); // do something if name is duplicated
+        setErrorIn(true);
       }
     } else {
-      if (formInfo.amount === "") {
-        // alert("specify amount"); // do something if not specified, like shake or turn red
         setErrorIn(true);
-      }
-      if (formInfo.name === "") {
-        // alert("specify name"); // do something if not specified, like shake or turn red
-        setErrorIn(true);
-      }
     }
   }
 
@@ -94,15 +84,10 @@ function Budget() {
         setExpenseNameField("");
         setExpenseAmountField("");
       } else {
-        alert("duplicate!"); // do something if name is duplicated
+        setErrorExp(true);
       }
     } else {
-      if (formInfo.amount === "") {
-        setErrorExp(true);
-      }
-      if (formInfo.name === "") {
-        setErrorExp(true);
-      }
+      setErrorExp(true);
     }
   }
 
@@ -120,13 +105,6 @@ function Budget() {
   const renderIncome = income.map((inc) => {
     // an array of our income list items
     return (
-      //   <ListItem key={income.indexOf(inc)}>
-      //     <ListItemText primary={inc.name} />
-      //     <ListItemText primary={inc.amount} />
-      //     <IconButton onClick={() => handleIncomeRemove(inc.name)}>
-      //       <DeleteIcon />
-      //     </IconButton>
-      //   </ListItem>
       <TableRow key={income.indexOf(inc)}>
         <TableCell align="left" sx={{ width: '33%' }}>{inc.name}</TableCell>
         <TableCell align="center" sx={{ width: '33%' }}>{inc.amount}</TableCell>
@@ -141,13 +119,6 @@ function Budget() {
 
   const renderExpenses = expenses.map((exp) => {
     return (
-      // <ListItem key={expenses.indexOf(exp)}>
-      //   <ListItemText primary={exp.name} />
-      //   <ListItemText primary={exp.amount} />
-      //   <IconButton onClick={() => handleExpenseRemove(exp.name)}>
-      //     <DeleteIcon />
-      //   </IconButton>
-      // </ListItem>
       <TableRow key={expenses.indexOf(exp)}>
       <TableCell align="left" sx={{ width: '33%' }}>{exp.name}</TableCell>
       <TableCell align="center" sx={{ width: '33%' }}>{exp.amount}</TableCell>
@@ -183,18 +154,16 @@ function Budget() {
   }
 
   return (
-    <div>
-      <Typography variant="h2">Budget</Typography>
+    <Grid sx={{ mx: 4 }}>
+      <Typography variant="h2">Simple Budget</Typography>
 
       <Typography variant="h4" gutterBottom>
         Income
       </Typography>
       <TableContainer ><Table>{renderIncome}</Table></TableContainer>
-      {/* <List>{renderIncome}</List> */}
       <FormControl error={errorIn}>
         <FormHelperText sx={{ m: 1 }} color="warning">
-          {" "}
-          Be sure to enter a name and amount{" "}
+          Be sure to enter a unique name and an amount
         </FormHelperText>
         <FormGroup row>
           <TextField
@@ -229,12 +198,10 @@ function Budget() {
       <Typography variant="h4" gutterBottom>
         Expenses
       </Typography>
-      {/* <List>{renderExpenses}</List> */}
       <TableContainer ><Table>{renderExpenses}</Table></TableContainer>
       <FormControl error={errorExp}>
         <FormHelperText sx={{ m: 1 }} color="warning">
-          {" "}
-          Be sure to enter a name and amount{" "}
+        Be sure to enter a unique name and an amount
         </FormHelperText>
 
         <FormGroup row>
@@ -273,7 +240,7 @@ function Budget() {
       <Typography variant="h5">Income: {incomeSum}</Typography>
       <Typography variant="h5">Expenses: {expenseSum}</Typography>
       <Typography variant="h5">Net: {incomeSum - expenseSum}</Typography>
-    </div>
+    </Grid>
   );
 }
 
