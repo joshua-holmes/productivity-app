@@ -13,39 +13,52 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 
 function Budget() {
-  const [income, setIncome] = useState([]);
-  const [expenses, setExpenses] = useState([]);
+  const [income, setIncome] = useState([]); // stores incomes
+  const [expenses, setExpenses] = useState([]); // stores expenses
 
-  const [incomeNameField, setIncomeNameField] = useState("");
-  const [incomeAmountField, setIncomeAmountField] = useState("");
+  const [incomeNameField, setIncomeNameField] = useState(""); // controls income name field
+  const [incomeAmountField, setIncomeAmountField] = useState(""); // controls income amount field
 
   function handleChangeTextIncome(e) {
+    // sets income name field state when user types
     e.preventDefault();
     setIncomeNameField(e.target.value);
   }
 
   function handleChangeAmountIncome(e) {
+    // sets income amount field state when user types
     e.preventDefault();
     setIncomeAmountField(e.target.value);
   }
 
   function handleSubmitIncome() {
+    // updates income state upon submit
     const formInfo = {
       name: incomeNameField,
       amount: incomeAmountField,
     };
+    const checkDup = income.find(obj => obj.name === formInfo.name)
 
-    setIncome([...income, formInfo]);
-    setIncomeNameField("");
-    setIncomeAmountField("");
+    if(checkDup === undefined){
+        setIncome([...income, formInfo]);
+        setIncomeNameField(""); // resets fields after submit
+        setIncomeAmountField("");
+    } else {
+        alert("duplicate!") // do something if name is duplicated
+    }
+    
+
+
   }
 
   function handleIncomeRemove(name) {
+    // gives functionality to the trash icon button
     const filteredIncome = income.filter((item) => item.name !== name);
     setIncome(filteredIncome);
   }
 
   const renderIncome = income.map((inc) => {
+    // an array of our income list items
     return (
       <ListItem key={income.indexOf(inc)}>
         <ListItemText primary={inc.name} />
@@ -75,10 +88,17 @@ function Budget() {
       name: expenseNameField,
       amount: expenseAmountField,
     };
+    const checkDup = expenses.find(obj => obj.name === formInfo.name)
 
-    setExpenses([...expenses, formInfo]);
-    setExpenseNameField("");
-    setExpenseAmountField("");
+    if(checkDup === undefined){
+        setExpenses([...expenses, formInfo]);    
+        setExpenseNameField("");
+        setExpenseAmountField("");
+    } else {
+        alert("duplicate!") // do something if name is duplicated
+    }
+
+
   }
 
   function handleExpenseRemove(name) {
@@ -97,6 +117,29 @@ function Budget() {
       </ListItem>
     );
   });
+
+  // hard coded placeholders
+  let incomeSum = 0; 
+  let expenseSum = 0;
+ 
+
+  if (income.length !== 0) {
+    const amountArrayIncome = income.map((obj) => obj.amount); // returns array of amounts only
+    incomeSum = amountArrayIncome
+      .map((num) => parseInt(num))
+      .reduce((a, b) => {
+        return a + b;
+      });
+  }
+
+  if (expenses.length !== 0) {
+    const amountArrayExpense = expenses.map((obj) => obj.amount); // returns array of amounts only
+    expenseSum = amountArrayExpense
+      .map((num) => parseInt(num))
+      .reduce((a, b) => {
+        return a + b;
+      });
+  }
 
   return (
     <div>
@@ -163,6 +206,9 @@ function Budget() {
       <Typography variant="h4" gutterBottom>
         Totals
       </Typography>
+      <Typography variant="h5">Income: {incomeSum}</Typography>
+      <Typography variant="h5">Expenses: {expenseSum}</Typography>
+      <Typography variant="h5">Net: {incomeSum - expenseSum}</Typography>
     </div>
   );
 }
