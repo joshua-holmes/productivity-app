@@ -1,12 +1,21 @@
 import Grid from "@mui/material/Grid";
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 
+import StocksCard from "./StocksCard";
 
-function Dashboard() {
+function Dashboard({ stockFaves, handleFave }) {
+
+  const renderedStockFaves = stockFaves.map((obj) => (
+    <StocksCard key={obj.id} obj={obj} favedState={1} handleFave={handleFave} />
+  ));
+
+  
+
   return (
-      <Grid sx={{ flexGrow: 1 }} container spacing={3}>
-          <Grid item xs>
+    <Grid sx={{ flexGrow: 1 }} container spacing={3}   justifyContent="space-evenly"
+    >
+      {renderedStockFaves}
+
+      {/* <Grid item xs>
               <Paper elevation={3} sx={{ px: 2, py: 5 }}>
                       <Typography variant="h5" gutterBottom>Testing</Typography>
                       <Typography>Testing</Typography>
@@ -30,8 +39,8 @@ function Dashboard() {
                       <Typography>Testing</Typography>
               </Paper>
           </Grid>
-         
-      </Grid>
+          */}
+    </Grid>
   );
 }
 

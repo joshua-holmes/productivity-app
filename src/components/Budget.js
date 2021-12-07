@@ -241,5 +241,4 @@ function Budget() {
         </Grid>
             );
         }
-
-        export default Budget;
+export default Budget;

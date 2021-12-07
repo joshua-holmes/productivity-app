@@ -30,7 +30,7 @@ function SideNav(props) {
     { id: 2, name: "Retirement", icon: <AutoGraphIcon />, link: "/retirement" },
     { id: 3, name: "Budget", icon: <AttachMoneyIcon />, link: "/budget" },
     { id: 4, name: "Pros & Cons", icon: <CompareIcon />, link: "/pros-cons" }, 
-    { id: 4, name: "Stocks", icon: <ShowChartIcon />, link: "/stocks" },
+    { id: 5, name: "Stocks", icon: <ShowChartIcon />, link: "/stocks" },
   ];
 
   const { window } = props;

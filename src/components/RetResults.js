@@ -1,7 +1,6 @@
 import RetAreaChart from "./RetAreaChart";
 import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
-import Slider from '@mui/material/Slider';
 import Grid from '@mui/material/Grid';
 import InputSlider from "./InputSlider";
 

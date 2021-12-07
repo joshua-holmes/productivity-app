@@ -1,14 +1,5 @@
 {
-  "favStocks": [
-    {
-      "Ticker": "XYZ",
-      "id": 1
-    },
-    {
-      "Ticker": "ABC",
-      "id": 2
-    }
-  ],
+  "favStocks": [],
   "budget": [
     {
       "year": 2021,
@@ -181,7 +172,8 @@
           "income": {
             "categories": {
               "food": 200,
-              "gas": 90
+              "gas": 90,
+              "sdf": "3"
             },
             "total": 290
           },

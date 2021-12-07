@@ -1,19 +1,12 @@
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Box from '@mui/material/Box';
-import InputField from "./InputField";
 import { useState } from "react";
-import Grid from '@mui/material/Grid';
 import RetResults from "./RetResults";
-
 import RetCalcForm from "./RetCalcForm";
 
+import Typography from "@mui/material/Typography";
 
 
 function Retirement() {
-    const [ formData, setFormData ] = useState({ rate: 0.06 });
-    console.log(formData);
-
+    const [ formData, setFormData ] = useState({ rate: 0.06, monthly: 0, initial: 0, goalYear: 0 });
 
     function handleSubmit(e) {
         e.preventDefault();
