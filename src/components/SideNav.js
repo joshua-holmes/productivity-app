@@ -12,25 +12,23 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
-import AppsIcon from '@mui/icons-material/Apps';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import CompareIcon from '@mui/icons-material/Compare';
+import AppsIcon from "@mui/icons-material/Apps";
+import AutoGraphIcon from "@mui/icons-material/AutoGraph";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import CompareIcon from "@mui/icons-material/Compare";
 import { Link } from "react-router-dom";
-
-import Budget from "./Budget";
 
 import { useState } from "react";
 
 const drawerWidth = 240;
 
 function SideNav(props) {
-    const pages = [
-        {id: 1, name: 'Dashboard', icon: <AppsIcon />, link: "/"},
-        {id: 2, name: 'Retirement', icon: <AutoGraphIcon />, link: "/retirement"},
-        {id: 3, name: 'Budget', icon: <AttachMoneyIcon />, link: "/budget"},
-        {id: 4, name: 'Pros & Cons', icon: <CompareIcon />, link: "/pros-cons"}
-    ]
+  const pages = [
+    { id: 1, name: "Dashboard", icon: <AppsIcon />, link: "/" },
+    { id: 2, name: "Retirement", icon: <AutoGraphIcon />, link: "/retirement" },
+    { id: 3, name: "Budget", icon: <AttachMoneyIcon />, link: "/budget" },
+    { id: 4, name: "Pros & Cons", icon: <CompareIcon />, link: "/pros-cons" },
+  ];
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -40,37 +38,24 @@ function SideNav(props) {
   };
 
   const linkStyle = {
-      textDecoration: "none",
-      color: "inherit",
-  }
+    textDecoration: "none",
+    color: "inherit",
+  };
 
   const drawer = (
     <div>
-        <Toolbar />
-        <Divider />
-        <List>
-            {pages.map((item) => (
-                <Link style={linkStyle} to={item.link} key={item.id}>
-                    <ListItem button>
-                        <ListItemIcon>
-                            {item.icon}
-                        </ListItemIcon>
-                        <ListItemText primary={item.name} />
-                    </ListItem>
-                </Link>
-            ))}
-        </List>
-        {/* <Divider />
-            <List>
-            {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+      <Toolbar />
+      <Divider />
+      <List>
+        {pages.map((item) => (
+          <Link style={linkStyle} to={item.link} key={item.id}>
+            <ListItem button>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.name} />
             </ListItem>
-            ))}
-        </List> */}
+          </Link>
+        ))}
+      </List>
     </div>
   );
 
@@ -79,78 +64,78 @@ function SideNav(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-        <AppBar
-            position="fixed"
-            sx={{
-                width: { sm: `calc(100% - ${drawerWidth}px)` },
-                ml: { sm: `${drawerWidth}px` },
-            }}
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        sx={{
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            Our App Name
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
         >
-            <Toolbar>
-                <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    edge="start"
-                    onClick={handleDrawerToggle}
-                    sx={{ mr: 2, display: { sm: "none" } }}
-                >
-                    <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" noWrap component="div">
-                    Our App Name
-                </Typography>
-            </Toolbar>
-        </AppBar>
-        <Box
-            component="nav"
-            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-            aria-label="mailbox folders"
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: "none", sm: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+          open
         >
-            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-            <Drawer
-                container={container}
-                variant="temporary"
-                open={mobileOpen}
-                onClose={handleDrawerToggle}
-                ModalProps={{
-                    keepMounted: true, // Better open performance on mobile.
-                }}
-                sx={{
-                    display: { xs: "block", sm: "none" },
-                    "& .MuiDrawer-paper": {
-                        boxSizing: "border-box",
-                        width: drawerWidth,
-                    },
-                }}
-            >
-                {drawer}
-            </Drawer>
-            <Drawer
-                variant="permanent"
-                sx={{
-                    display: { xs: "none", sm: "block" },
-                    "& .MuiDrawer-paper": {
-                        boxSizing: "border-box",
-                        width: drawerWidth,
-                    },
-                }}
-                open
-            >
-                {drawer}
-            </Drawer>
-        </Box>
-        <Box
-            component="main"
-            sx={{
-                flexGrow: 1,
-                p: 3,
-                width: { sm: `calc(100% - ${drawerWidth}px)` },
-            }}
-        >
-            <Toolbar />
-            {props.children}
-        </Box>
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+        }}
+      >
+        <Toolbar />
+        {props.children}
+      </Box>
     </Box>
   );
 }
