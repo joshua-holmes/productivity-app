@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Budget from "./components/Budget";
 import Retirement from "./components/Retirement";
 import ProsCons from "./components/ProsCons";
+import Stocks from "./components/Stocks"
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
@@ -36,6 +37,7 @@ function App() {
                             <Route path="/budget" element={<Budget />}/>
                             <Route path="/retirement" element={<Retirement />}/>
                             <Route path="/pros-cons" element={<ProsCons />}/>
+                            <Route path="/stocks" element={<Stocks />}/>
                         </Routes>
                     </SideNav>
                 </ThemeProvider>

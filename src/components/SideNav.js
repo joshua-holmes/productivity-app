@@ -16,6 +16,8 @@ import AppsIcon from "@mui/icons-material/Apps";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import CompareIcon from "@mui/icons-material/Compare";
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
@@ -27,7 +29,8 @@ function SideNav(props) {
     { id: 1, name: "Dashboard", icon: <AppsIcon />, link: "/" },
     { id: 2, name: "Retirement", icon: <AutoGraphIcon />, link: "/retirement" },
     { id: 3, name: "Budget", icon: <AttachMoneyIcon />, link: "/budget" },
-    { id: 4, name: "Pros & Cons", icon: <CompareIcon />, link: "/pros-cons" },
+    { id: 4, name: "Pros & Cons", icon: <CompareIcon />, link: "/pros-cons" }, 
+    { id: 4, name: "Stocks", icon: <ShowChartIcon />, link: "/stocks" },
   ];
 
   const { window } = props;
