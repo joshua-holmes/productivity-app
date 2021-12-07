@@ -1,35 +1,20 @@
-import { useEffect, useState } from "react";
+import StocksCard from "./StocksCard";
 
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
 
-function Stocks() {
-  const [stocksData, setStocksData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://api.coinstats.app/public/v1/coins?skip=0&limit=10")
-      .then((response) => response.json())
-      .then((obj) => {
-        setStocksData(obj.coins);
-      });
-  }, []);
+function Stocks( { stocksData, stockFaves, handleFave } ) {
 
   const renderStocks = stocksData.map((obj) => {
     return (
-      <Grid key={obj.rank} item xs>
-        <Paper elevation={3} sx={{ px: 2, py: 5 }}>
-          <Typography variant="h5" gutterBottom>
-            {obj.symbol}
-          </Typography>
-          <Typography>{obj.priceChange1w}</Typography>
-        </Paper>
-      </Grid>
+      <StocksCard key={obj.id} obj={obj} handleFave={handleFave} 
+      favedState={stockFaves.find(item => item.id === obj.id) === undefined ? 0 : 1} />
+      // if our stock is favorited, render its default as such
     );
   });
 
   return (
-    <Grid sx={{ flexGrow: 1 }} container spacing={3}>
+    <Grid    justifyContent="space-evenly"
+sx={{ flexGrow: 1 }} container spacing={3}>
       {renderStocks}
     </Grid>
   );

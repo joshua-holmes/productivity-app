@@ -1,51 +1,118 @@
 {
-    "favStocks": [
-        {
-            "Ticker": "XYZ",
-            "id": 1
+  "favStocks": [
+    {
+      "id": "bitcoin",
+      "icon": "https://static.coinstats.app/coins/Bitcoin6l39t.png",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "rank": 1,
+      "price": 51600.15436875853,
+      "priceBtc": 1,
+      "volume": 39439857059.14764,
+      "marketCap": 974936825453.8207,
+      "availableSupply": 18894068,
+      "totalSupply": 21000000,
+      "priceChange1h": 1.34,
+      "priceChange1d": 7.16,
+      "priceChange1w": -11.65,
+      "websiteUrl": "http://www.bitcoin.org",
+      "twitterUrl": "https://twitter.com/bitcoin",
+      "exp": [
+        "https://blockchair.com/bitcoin/",
+        "https://btc.com/",
+        "https://btc.tokenview.com/"
+      ]
+    },
+    {
+      "id": "ethereum",
+      "icon": "https://static.coinstats.app/coins/EthereumOCjgD.png",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "rank": 2,
+      "price": 4341.362465438682,
+      "priceBtc": 0.08476485698325187,
+      "volume": 29639630109.777103,
+      "marketCap": 515075821473.21875,
+      "availableSupply": 118643818.749,
+      "totalSupply": 0,
+      "priceChange1h": -1.46,
+      "priceChange1d": 4.51,
+      "priceChange1w": -6.59,
+      "websiteUrl": "https://www.ethereum.org/",
+      "twitterUrl": "https://twitter.com/ethereum",
+      "contractAddress": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "decimals": 18,
+      "exp": [
+        "https://etherscan.io/",
+        "https://ethplorer.io/",
+        "https://blockchair.com/ethereum",
+        "https://eth.tokenview.com/",
+        "https://hecoinfo.com/token/0x64ff637fb478863b7468bc97d30a5bf3a428a1fd",
+        "https://bscscan.com/token/0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "https://snowtrace.io/token/0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15"
+      ]
+    },
+    {
+      "id": "solana",
+      "icon": "https://static.coinstats.app/coins/solanambZ.png",
+      "name": "Solana",
+      "symbol": "SOL",
+      "rank": 5,
+      "price": 196.83556761030363,
+      "priceBtc": 0.0038563314493332878,
+      "volume": 3518224497.12153,
+      "marketCap": 60214179294.412384,
+      "availableSupply": 305911070.978924,
+      "totalSupply": 508180963.57,
+      "priceChange1h": 0.05,
+      "priceChange1d": 4.49,
+      "priceChange1w": -7.47,
+      "websiteUrl": "https://solana.com/",
+      "twitterUrl": "https://twitter.com/solana",
+      "contractAddress": "0x7dff46370e9ea5f0bad3c4e29711ad50062ea7a4",
+      "decimals": 18,
+      "exp": [
+        "https://explorer.solana.com/",
+        "https://solscan.io/",
+        "https://solanabeach.io/"
+      ]
+    }
+  ],
+  "budget2022": [
+    {
+      "month": "January",
+      "income": {
+        "categories": {
+          "food": 200,
+          "gas": 90
         },
-        {
-            "Ticker": "ABC",
-            "id": 2
-        }
-    ],
-    "budget2022": [
-        {
-            "month": "January",
-            "income": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                },
-                "total": 290
-
-            },
-            "expenses": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                },
-                "total": 290
-            },
-            "id": 1
+        "total": 290
+      },
+      "expenses": {
+        "categories": {
+          "food": 200,
+          "gas": 90
         },
-        {
-            "month": "February",
-            "income": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                },
-                "total": 290
-
-            },
-            "expenses": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                }
-            },
-            "id": 2
+        "total": 290
+      },
+      "id": 1
+    },
+    {
+      "month": "February",
+      "income": {
+        "categories": {
+          "food": 200,
+          "gas": 90
+        },
+        "total": 290
+      },
+      "expenses": {
+        "categories": {
+          "food": 200,
+          "gas": 90
         }
-    ]
+      },
+      "id": 2
+    }
+  ]
 }
