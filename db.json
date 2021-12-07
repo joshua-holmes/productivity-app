@@ -1,51 +1,399 @@
 {
-    "favStocks": [
-        {
-            "Ticker": "XYZ",
-            "id": 1
+  "favStocks": [
+    {
+      "Ticker": "XYZ",
+      "id": 1
+    },
+    {
+      "Ticker": "ABC",
+      "id": 2
+    }
+  ],
+  "budget": [
+    {
+      "year": 2021,
+      "data": {
+        "January": {
+          "income": {
+            "categories": {},
+            "total": 290
+          },
+          "expenses": {
+            "categories": {},
+            "total": 290
+          }
         },
-        {
-            "Ticker": "ABC",
-            "id": 2
-        }
-    ],
-    "budget2022": [
-        {
-            "month": "January",
-            "income": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                },
-                "total": 290
-
-            },
-            "expenses": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                },
-                "total": 290
-            },
-            "id": 1
+        "February": {
+          "income": {
+            "categories": {},
+            "total": 290
+          },
+          "expenses": {
+            "categories": {},
+            "total": 290
+          }
         },
-        {
-            "month": "February",
-            "income": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                },
-                "total": 290
-
+        "March": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
             },
-            "expenses": {
-                "categories": {
-                    "food": 200,
-                    "gas": 90
-                }
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
             },
-            "id": 2
+            "total": 290
+          }
+        },
+        "April": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "May": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "June": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "July": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "August": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "September": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "October": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "November": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "December": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
         }
-    ]
+      },
+      "id": 1
+    },
+    {
+      "year": 2022,
+      "data": {
+        "January": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90,
+              "sdf": "3"
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "February": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "March": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "April": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "May": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "June": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "July": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "August": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "September": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "October": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "November": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        },
+        "December": {
+          "income": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          },
+          "expenses": {
+            "categories": {
+              "food": 200,
+              "gas": 90
+            },
+            "total": 290
+          }
+        }
+      },
+      "id": 2
+    }
+  ]
 }
