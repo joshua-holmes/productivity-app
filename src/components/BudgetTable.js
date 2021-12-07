@@ -22,7 +22,7 @@ function BudgetTable() {
 
     return (
         <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            {/* <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Dessert (100g serving)</TableCell>
@@ -48,7 +48,7 @@ function BudgetTable() {
                         </TableRow>
                     ))}
                 </TableBody>
-            </Table>
+            </Table> */}
         </TableContainer>
     )
 }
