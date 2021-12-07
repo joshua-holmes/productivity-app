@@ -13,6 +13,7 @@ import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableRow from "@mui/material/TableRow";
 import Grid from "@mui/material/Grid";
+import BudgetTable from "./BudgetTable";
 
 function Budget() {
   const [income, setIncome] = useState([]); // stores incomes
@@ -166,95 +167,97 @@ function Budget() {
 
   return (
     <Grid sx={{ mx: 4 }}>
-      <Typography variant="h2">Simple Budget</Typography>
+        <Typography variant="h2">Simple Budget</Typography>
 
-      <Typography variant="h4" gutterBottom>
-        Income
-      </Typography>
-      <TableContainer>
-        <Table>{renderIncome}</Table>
-      </TableContainer>
-      <FormControl error={errorIn}>
-        <FormHelperText sx={{ m: 1 }} color="warning">
-          Be sure to enter a unique name and an amount
-        </FormHelperText>
-        <FormGroup row>
-          <TextField
-            sx={{ m: 1, minWidth: 120 }}
-            id="outlined-basic"
-            label="Income name"
-            variant="outlined"
-            onChange={handleChangeTextIncome}
-            value={incomeNameField}
-          />
-          <TextField
-            sx={{ m: 1, minWidth: 120 }}
-            id="outlined-number"
-            label="Amount"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            onChange={handleChangeAmountIncome}
-            value={incomeAmountField}
-          />
-          <Button
-            onClick={handleSubmitIncome}
-            sx={{ m: 1 }}
-            variant="contained"
-          >
-            <AddIcon />
-          </Button>
-        </FormGroup>
-      </FormControl>
+        <Typography variant="h4" gutterBottom>
+            Income
+        </Typography>
+        <TableContainer>
+            <Table>{renderIncome}</Table>
+        </TableContainer>
+        <FormControl error={errorIn}>
+            <FormHelperText sx={{ m: 1 }} color="warning">
+                Be sure to enter a unique name and an amount
+            </FormHelperText>
+            <FormGroup row>
+                <TextField
+                    sx={{ m: 1, minWidth: 120 }}
+                    id="outlined-basic"
+                    label="Income name"
+                    variant="outlined"
+                    onChange={handleChangeTextIncome}
+                    value={incomeNameField}
+                />
+                <TextField
+                    sx={{ m: 1, minWidth: 120 }}
+                    id="outlined-number"
+                    label="Amount"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    onChange={handleChangeAmountIncome}
+                    value={incomeAmountField}
+                />
+                <Button
+                    onClick={handleSubmitIncome}
+                    sx={{ m: 1 }}
+                    variant="contained"
+                >
+                    <AddIcon />
+                </Button>
+            </FormGroup>
+        </FormControl>
 
-      <Typography variant="h4" gutterBottom>
-        Expenses
-      </Typography>
-      <TableContainer>
-        <Table>{renderExpenses}</Table>
-      </TableContainer>
-      <FormControl error={errorExp}>
-        <FormHelperText sx={{ m: 1 }} color="warning">
-          Be sure to enter a unique name and an amount
-        </FormHelperText>
+        <Typography variant="h4" gutterBottom>
+            Expenses
+        </Typography>
+        <TableContainer>
+            <Table>{renderExpenses}</Table>
+        </TableContainer>
+        <FormControl error={errorExp}>
+            <FormHelperText sx={{ m: 1 }} color="warning">
+                Be sure to enter a unique name and an amount
+            </FormHelperText>
 
-        <FormGroup row>
-          <TextField
-            sx={{ m: 1, minWidth: 120 }}
-            id="outlined-basic"
-            label="Expense name"
-            variant="outlined"
-            onChange={handleChangeTextExpense}
-            value={expenseNameField}
-          />
-          <TextField
-            sx={{ m: 1, minWidth: 120 }}
-            id="outlined-number"
-            label="Amount"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            onChange={handleChangeAmountExpense}
-            value={expenseAmountField}
-          />
-          <Button
-            onClick={handleSubmitExpense}
-            sx={{ m: 1 }}
-            variant="contained"
-          >
-            <AddIcon />
-          </Button>
-        </FormGroup>
-      </FormControl>
+            <FormGroup row>
+                <TextField
+                    sx={{ m: 1, minWidth: 120 }}
+                    id="outlined-basic"
+                    label="Expense name"
+                    variant="outlined"
+                    onChange={handleChangeTextExpense}
+                    value={expenseNameField}
+                />
+                <TextField
+                    sx={{ m: 1, minWidth: 120 }}
+                    id="outlined-number"
+                    label="Amount"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    onChange={handleChangeAmountExpense}
+                    value={expenseAmountField}
+                />
+                <Button
+                    onClick={handleSubmitExpense}
+                    sx={{ m: 1 }}
+                    variant="contained"
+                >
+                    <AddIcon />
+                </Button>
+            </FormGroup>
+        </FormControl>
 
-      <Typography variant="h4" gutterBottom>
-        Totals
-      </Typography>
-      <Typography variant="h5">Income: {incomeSum}</Typography>
-      <Typography variant="h5">Expenses: {expenseSum}</Typography>
-      <Typography variant="h5">Net: {incomeSum - expenseSum}</Typography>
+        <Typography variant="h4" gutterBottom>
+            Totals
+        </Typography>
+        <Typography variant="h5">Income: {incomeSum}</Typography>
+        <Typography variant="h5">Expenses: {expenseSum}</Typography>
+        <Typography variant="h5">Net: {incomeSum - expenseSum}</Typography>
+
+        <BudgetTable />
     </Grid>
   );
 }
