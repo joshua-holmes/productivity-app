@@ -13,7 +13,6 @@ import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableRow from "@mui/material/TableRow";
 import Grid from "@mui/material/Grid";
-import BudgetTable from "./BudgetTable";
 
 function Budget() {
   const [income, setIncome] = useState([]); // stores incomes
@@ -257,7 +256,6 @@ function Budget() {
         <Typography variant="h5">Expenses: {expenseSum}</Typography>
         <Typography variant="h5">Net: {incomeSum - expenseSum}</Typography>
 
-        <BudgetTable />
     </Grid>
   );
 }

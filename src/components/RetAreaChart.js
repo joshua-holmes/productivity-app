@@ -1,15 +1,19 @@
-import { AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import { ResponsiveContainer, AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
 function RetAreaChart({ data }) {
 
     return (
-        <AreaChart style={{margin: "auto"}} width={600} height={300} data={data}>
-            <Area type="monotone" dataKey="dollars" stroke="#8884d8" />
-            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="years" />
-            <YAxis />
-            <Tooltip />
-        </AreaChart>
+        
+            <ResponsiveContainer  width="85%" height={300}>
+            <AreaChart data={data}>
+                <Area type="monotone" dataKey="dollars" stroke="#6a1b9a"  fill="#6a1b9a" />
+                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                <XAxis dataKey="years" />
+                <YAxis />
+                <Tooltip />
+            </AreaChart>
+            </ResponsiveContainer>
+        
     )
 }
 

@@ -21,7 +21,7 @@ const theme = createTheme({
       main: purple[800],
     },
     secondary: {
-      main: "#f44336", // didn't specify
+      main: purple[100], 
     },
   },
 });
