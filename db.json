@@ -1,0 +1,51 @@
+{
+    "favStocks": [
+        {
+            "Ticker": "XYZ",
+            "id": 1
+        },
+        {
+            "Ticker": "ABC",
+            "id": 2
+        }
+    ],
+    "budget2022": [
+        {
+            "month": "January",
+            "income": {
+                "categories": {
+                    "food": 200,
+                    "gas": 90
+                },
+                "total": 290
+
+            },
+            "expenses": {
+                "categories": {
+                    "food": 200,
+                    "gas": 90
+                },
+                "total": 290
+            },
+            "id": 1
+        },
+        {
+            "month": "February",
+            "income": {
+                "categories": {
+                    "food": 200,
+                    "gas": 90
+                },
+                "total": 290
+
+            },
+            "expenses": {
+                "categories": {
+                    "food": 200,
+                    "gas": 90
+                }
+            },
+            "id": 2
+        }
+    ]
+}
