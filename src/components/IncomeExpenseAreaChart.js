@@ -1,11 +1,10 @@
-import { AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from "recharts";
+import { ResponsiveContainer, AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from "recharts";
 
 function IncomeExpenseAreaChart({ data }) {
-    console.log(data);
 
     return (
-        <AreaChart width={730} height={250} data={data}
-            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+        <ResponsiveContainer width="90%" height={300}>
+        <AreaChart data={data}>
             <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
@@ -22,7 +21,7 @@ function IncomeExpenseAreaChart({ data }) {
             <Tooltip />
             <Area type="monotone" dataKey="income" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
             <Area type="monotone" dataKey="expenses" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
-        </AreaChart>
+        </AreaChart></ResponsiveContainer>
     )
 }
 
