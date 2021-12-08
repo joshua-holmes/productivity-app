@@ -30,7 +30,7 @@ function BudgetList({ incomeOrExpenses, handleRemove, budgetData, monthName }) {
                                     {inc.amount}
                                 </TableCell>
                                 <TableCell align="right" sx={{ width: "33%" }}>
-                                    <IconButton onClick={() => handleRemove(inc.name, incomeOrExpenses)}>
+                                    <IconButton onClick={() => handleRemove(inc.name, parseFloat(inc.amount), incomeOrExpenses)}>
                                         <DeleteIcon />
                                     </IconButton>
                                 </TableCell>

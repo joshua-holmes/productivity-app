@@ -224,9 +224,10 @@
         "December": {
           "income": {
             "categories": {
-              "work": 1000
+              "work": 1000,
+              "Blah blah blah": 1000
             },
-            "total": 290
+            "total": 1290
           },
           "expenses": {
             "categories": {

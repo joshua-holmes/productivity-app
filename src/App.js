@@ -21,7 +21,7 @@ const theme = createTheme({
       main: purple[800],
     },
     secondary: {
-      main: purple[100], 
+      main: purple[100],
     },
   },
 });
@@ -29,6 +29,12 @@ const theme = createTheme({
 function App() {
   const [stockFaves, setStockFaves] = useState([]);
   const [stocksData, setStocksData] = useState([]);
+
+  // Current date
+  const newDate = new Date();
+  const currentMonthValue = newDate.getMonth() + 1;
+  const currentYearValue = newDate.getFullYear();
+  const currentMonthYear = `${currentYearValue}-${currentMonthValue}`
 
   useEffect(() => {
     // initial fetch for favorites only
@@ -82,29 +88,29 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <ThemeProvider theme={theme}>
-          <SideNav>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <Dashboard stockFaves={stockFaves} handleFave={handleFave} />
-                }
-              />
-              <Route path="/budget" element={<Budget />} />
-              <Route path="/retirement" element={<Retirement />} />
-              <Route path="/pros-cons" element={<ProsCons />} />
-              <Route
-                path="/stocks"
-                element={
-                  <Stocks stockFaves={stockFaves} stocksData={stocksData} handleFave={handleFave} />
-                }
-              />
-            </Routes>
-          </SideNav>
-        </ThemeProvider>
-      </BrowserRouter>
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <SideNav>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <Dashboard stockFaves={stockFaves} handleFave={handleFave} currentMonthYear={currentMonthYear} />
+                            }
+                        />
+                        <Route path="/budget" element={<Budget currentMonthYear={currentMonthYear} />} />
+                        <Route path="/retirement" element={<Retirement />} />
+                        <Route path="/pros-cons" element={<ProsCons />} />
+                        <Route
+                            path="/stocks"
+                            element={
+                                <Stocks stockFaves={stockFaves} stocksData={stocksData} handleFave={handleFave} />
+                            }
+                        />
+                    </Routes>
+                </SideNav>
+            </ThemeProvider>
+        </BrowserRouter>
     </div>
   );
 }

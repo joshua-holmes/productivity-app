@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import BudgetList from "./BudgetList";
 import BudgetFormBody from "./BudgetFormBody";
 
-function Budget() {
+function Budget({ currentMonthYear }) {
     // Data from server
     const [budgetData, setBudgetData] = useState()
 
@@ -17,13 +17,8 @@ function Budget() {
     // error handling
     const [isError, setIsError] = useState({ income: false, expenses: false });
 
-    // Current date
-    const newDate = new Date();
-    const currentMonthValue = newDate.getMonth() + 1;
-    const currentYearValue = newDate.getFullYear();
-
     // Date state & helper variables based off that
-    const [yearMonth, setYearMonth] = useState(`${currentYearValue}-${currentMonthValue}`);
+    const [yearMonth, setYearMonth] = useState(currentMonthYear);
     const yearValue = parseInt(yearMonth.slice(0, 4))
     const monthValue = parseInt(yearMonth.slice(-2))
     const yearToFetch = ( yearValue >= 2021 ? parseInt(yearMonth.slice(2, 4)) - 20 : null )
@@ -83,6 +78,7 @@ function Budget() {
                 }
             }
             body.data[monthName][incomeOrExpenses].categories = newCategories
+            body.data[monthName][incomeOrExpenses].total += parseFloat(form.amount)
             const config = {
                 method: "PATCH",
                 headers: {
@@ -105,7 +101,7 @@ function Budget() {
             })
         }
     }
-    function handleRemove(name, incomeOrExpenses) {
+    function handleRemove(name, amount, incomeOrExpenses) {
         // gives functionality to the trash icon button
         const categories = budgetData[monthName][incomeOrExpenses].categories;
         const newCategories = {}
@@ -120,6 +116,7 @@ function Budget() {
             }
         }
         body.data[monthName][incomeOrExpenses].categories = newCategories
+        body.data[monthName][incomeOrExpenses].total -= amount
         const config = {
             method: "PATCH",
             headers: {
