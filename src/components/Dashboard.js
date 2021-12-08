@@ -1,10 +1,11 @@
 import Grid from "@mui/material/Grid";
 import Input from "@mui/material/Input";
 import StocksCard from "./StocksCard";
+import IncomeExpensesPieChart from "./IncomeExpensesPieChart";
 import { useEffect, useState } from "react";
 import IncomeExpenseAreaChart from "./IncomeExpenseAreaChart";
 import Container from "@mui/material/Container";
-import { ResponsiveContainer, PieChart, Pie } from "recharts";
+import { ResponsiveContainer } from "recharts";
 
 import DashboardCard from "./DashboardCard";
 import { Typography } from "@mui/material";
@@ -54,17 +55,7 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
     }
     return returnedArray;
   }
-  function getMonthlyBudgetData(budgetData, monthName, incomeOrExpenses) {
-      const returnedArray = [];
-      const categories = budgetData[monthName][incomeOrExpenses].categories;
-      for ( let item in categories ) {
-          returnedArray.push({
-              category: item,
-              amount: categories[item]
-          })
-      }
-      return returnedArray;
-  }
+
 
   return (
     <>
@@ -80,17 +71,17 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
             spacing={3}
             justifyContent="space-evenly"
         >
-            <PieChart width={730} height={250}>
-                <Pie
-                    data={budgetData && getMonthlyBudgetData(budgetData, monthName, "expenses")}
-                    dataKey="amount"
-                    nameKey="category"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={50}
-                    fill="#8884d8"
-                />
-            </PieChart>
+            <IncomeExpensesPieChart
+                budgetData={budgetData}
+                monthName={monthName}
+                incomeOrExpenses="expenses"
+            />
+            <IncomeExpensesPieChart
+                budgetData={budgetData}
+                monthName={monthName}
+                incomeOrExpenses="income"
+            />
+
             {renderedStockFaves}
 
             <Grid item xs={12} md={8} lg={6}>
