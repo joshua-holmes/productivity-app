@@ -4,7 +4,7 @@ import StocksCard from "./StocksCard";
 import { useEffect, useState } from "react";
 import IncomeExpenseAreaChart from "./IncomeExpenseAreaChart";
 import Container from "@mui/material/Container";
-import { ResponsiveContainer } from "recharts";
+import { ResponsiveContainer, PieChart, Pie } from "recharts";
 
 import DashboardCard from "./DashboardCard";
 import { Typography } from "@mui/material";
@@ -54,6 +54,17 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
     }
     return returnedArray;
   }
+  function getMonthlyBudgetData(budgetData, monthName, incomeOrExpenses) {
+    const returnedArray = [];
+    const categories = budgetData[monthName][incomeOrExpenses].categories;
+    for (let item in categories) {
+      returnedArray.push({
+        category: item,
+        amount: categories[item],
+      });
+    }
+    return returnedArray;
+  }
 
   return (
     <>
@@ -74,11 +85,39 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
         <Grid item xs={12} md={8} lg={6}>
           <DashboardCard>
             <Container sx={{ py: 3 }}>
-                <Typography gutterBottom variant="h5">{yearValue} Budget Analysis</Typography>
+              <Typography gutterBottom variant="h5">
+                {yearValue} Budget Analysis
+              </Typography>
               <ResponsiveContainer width="100%" height={300}>
                 <IncomeExpenseAreaChart
                   data={budgetData && getAllBudgetDataByMonth(budgetData)}
                 />
+              </ResponsiveContainer>
+            </Container>
+          </DashboardCard>
+        </Grid>
+
+        <Grid item xs={12} md={6} lg={4}>
+          <DashboardCard>
+            <Container sx={{ py: 3 }}>
+              <Typography gutterBottom variant="h5">
+                {monthName} Analysis
+              </Typography>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart >
+                  <Pie
+                    data={
+                      budgetData &&
+                      getMonthlyBudgetData(budgetData, monthName, "expenses")
+                    }
+                    dataKey="amount"
+                    nameKey="category"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={50}
+                    fill="#8884d8"
+                  />
+                </PieChart>
               </ResponsiveContainer>
             </Container>
           </DashboardCard>
