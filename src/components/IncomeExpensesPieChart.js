@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell } from "recharts";
+import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
 function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
 
@@ -32,24 +32,26 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
     // ]
     const renderChart = () => {
         return (
-            <PieChart width={730} height={250}>
-                <Pie
-                    data={pieData}
-                    dataKey="amount"
-                    nameKey="category"
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={80}
-                    paddingAngle={5}
-                    fill="#8884d8"
-                    label={getPieLabel}
-                >
-                    {pieData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                </Pie>
-            </PieChart>
+            <ResponsiveContainer>
+                <PieChart>
+                    <Pie
+                        data={pieData}
+                        dataKey="amount"
+                        nameKey="category"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={80}
+                        paddingAngle={5}
+                        fill="#8884d8"
+                        label={getPieLabel}
+                    >
+                        {pieData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                    </Pie>
+                </PieChart>
+            </ResponsiveContainer>
         )
     }
     const chart = dataIsLoaded ? renderChart() : null
