@@ -49,7 +49,7 @@ function RetCalcForm({ formData, setFormData, handleSubmit }) {
                     formData={formData}
                     type="number"
                 />
-                <Grid item xs={12}>
+                <Grid item xs={12} sx={{ mb: 3 }}>
                     <Button type="submit">Submit</Button>
                 </Grid>
             </Grid>
