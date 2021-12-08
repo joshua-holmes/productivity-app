@@ -1,5 +1,58 @@
 {
-  "favStocks": [],
+  "favStocks": [
+    {
+      "id": "bitcoin",
+      "icon": "https://static.coinstats.app/coins/Bitcoin6l39t.png",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "rank": 1,
+      "price": 49019.538403605584,
+      "priceBtc": 1,
+      "volume": 35361205854.49401,
+      "marketCap": 926231531066.8881,
+      "availableSupply": 18895150,
+      "totalSupply": 21000000,
+      "priceChange1h": -0.62,
+      "priceChange1d": -3.76,
+      "priceChange1w": -15.03,
+      "websiteUrl": "http://www.bitcoin.org",
+      "twitterUrl": "https://twitter.com/bitcoin",
+      "exp": [
+        "https://blockchair.com/bitcoin/",
+        "https://btc.com/",
+        "https://btc.tokenview.com/"
+      ]
+    },
+    {
+      "id": "ethereum",
+      "icon": "https://static.coinstats.app/coins/EthereumOCjgD.png",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "rank": 2,
+      "price": 4294.126873111437,
+      "priceBtc": 0.08759731117006778,
+      "volume": 37175885071.92705,
+      "marketCap": 509521211609.7718,
+      "availableSupply": 118655369.6865,
+      "totalSupply": 0,
+      "priceChange1h": -0.34,
+      "priceChange1d": -1.12,
+      "priceChange1w": -8.28,
+      "websiteUrl": "https://www.ethereum.org/",
+      "twitterUrl": "https://twitter.com/ethereum",
+      "contractAddress": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "decimals": 18,
+      "exp": [
+        "https://etherscan.io/",
+        "https://ethplorer.io/",
+        "https://blockchair.com/ethereum",
+        "https://eth.tokenview.com/",
+        "https://hecoinfo.com/token/0x64ff637fb478863b7468bc97d30a5bf3a428a1fd",
+        "https://bscscan.com/token/0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "https://snowtrace.io/token/0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15"
+      ]
+    }
+  ],
   "budget": [
     {
       "year": 2021,

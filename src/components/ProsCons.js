@@ -14,7 +14,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import FormHelperText from "@mui/material/FormHelperText";
 
-
 function ProsCons() {
   const [pros, setPros] = useState([]); // stores pros values
   const [cons, setCons] = useState([]); // stores cons values
@@ -24,7 +23,8 @@ function ProsCons() {
 
   const [error, setError] = useState(false); // error handling
 
-  const renderProsArray = pros.map((item) => { // render an array of pros listitemcontainers
+  const renderProsArray = pros.map((item) => {
+    // render an array of pros listitemcontainers
     return (
       <ListItemContainer
         key={pros.indexOf(item)}
@@ -34,7 +34,8 @@ function ProsCons() {
     );
   });
 
-  const renderConsArray = cons.map((item) => { // render an array of cons listitemcontainers
+  const renderConsArray = cons.map((item) => {
+    // render an array of cons listitemcontainers
     return (
       <ListItemContainer
         key={cons.indexOf(item)}
@@ -44,27 +45,32 @@ function ProsCons() {
     );
   });
 
-  function handleChangeSelect(e) { // update state when changed
+  function handleChangeSelect(e) {
+    // update state when changed
     setProsConsValue(e.target.value);
     setError(false);
   }
 
-  function handleChangeText(e) { // update state when changed
+  function handleChangeText(e) {
+    // update state when changed
     setTextFieldValue(e.target.value);
     setError(false);
   }
 
-  function formReset(){ // resets states of form
+  function formReset() {
+    // resets states of form
     setProsConsValue("");
     setTextFieldValue("");
   }
 
-  function handleSubmit(e) { // handle the submit
+  function handleSubmit(e) {
+    // handle the submit
     e.preventDefault();
     const checkDupPro = pros.find((thing) => thing === textFieldValue); // check for duplicates
     const checkDupCon = cons.find((thing) => thing === textFieldValue);
 
-    if ( // only continue if these are true. checks for duplicates and that our form is filled out
+    if (
+      // only continue if these are true. checks for duplicates and that our form is filled out
       textFieldValue !== "" &&
       prosConsValue !== "" &&
       checkDupPro === undefined &&
@@ -84,7 +90,7 @@ function ProsCons() {
 
   function handleRemove(item) {
     const foundInPros = pros.find((arrayItem) => item === arrayItem); // searches for our name
-    if (foundInPros === undefined) { 
+    if (foundInPros === undefined) {
       // if it isnt in the pros array, remove it from cons array
       const filteredCons = cons.filter((arrayItem) => item !== arrayItem);
       setCons(filteredCons);
@@ -102,9 +108,12 @@ function ProsCons() {
         label="List name"
         variant="standard"
         sx={{ mb: 4 }}
+        inputProps={{
+          style: { fontSize: 30 },
+        }}
       />
 
-      <Grid container sx={{ minHeight: 200 }}>
+      <Grid container sx={{ minHeight: 400, mb: 5 }}>
         <Grid item xs>
           <Typography variant="h4" gutterBottom component="div">
             Pros

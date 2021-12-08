@@ -25,6 +25,16 @@ function StocksCard({ obj, handleFave, favedState }) {
     change = obj.priceChange1w;
   }
 
+  // formats dollar amounts
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  
+    // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+  });
+
   return (
     <Grid item xs={12} md={6} lg={4}>
       <Paper elevation={3} sx={{ px: 2, py: 3 }}>
@@ -42,8 +52,8 @@ function StocksCard({ obj, handleFave, favedState }) {
           />
         </Stack>
 
-        <Typography variant="h5">{obj.price}</Typography>
-        <Typography color={change < 0 ? "red" : "green"} gutterBottom>{change}</Typography>
+        <Typography variant="h5">{formatter.format(obj.price)}</Typography>
+        <Typography color={change < 0 ? "red" : "green"} gutterBottom>{change} %</Typography>
         <Stack direction="row" justifyContent="center" spacing={1} >
           <Button
             variant={changeTime === "Hour" ? "contained" : "outlined"}
