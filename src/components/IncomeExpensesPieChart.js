@@ -32,7 +32,7 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
     // ]
     const renderChart = () => {
         return (
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%">
                 <PieChart>
                     <Pie
                         data={pieData}

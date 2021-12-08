@@ -69,7 +69,7 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
         sx={{ flexGrow: 1 }}
         container
         spacing={3}
-        justifyContent='center'
+        justifyContent="space-evenly"
       >
         {renderedStockFaves}
 
@@ -88,7 +88,7 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
           </DashboardCard>
         </Grid>
 
-        <Grid item xs={12} m={6} lg={4}>
+        <Grid item xs={12} md={8} lg={6}>
           <DashboardCard>
             <Container sx={{ py: 3 }}>
               <Typography gutterBottom variant="h5">
@@ -101,11 +101,12 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
                     incomeOrExpenses="income"
                   />
               </ResponsiveContainer>
+              
             </Container>
           </DashboardCard>
         </Grid>
 
-        <Grid item xs={12} m={6} lg={4}>
+        <Grid item xs={12} md={8} lg={6}>
           <DashboardCard>
             <Container sx={{ py: 3 }}>
               <Typography gutterBottom variant="h5">
