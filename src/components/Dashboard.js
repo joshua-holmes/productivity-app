@@ -74,7 +74,7 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
         <Grid item xs={12} md={8} lg={6}>
           <DashboardCard>
             <Container sx={{ py: 3 }}>
-                <Typography gutterBottom variant="h5">Graph Title</Typography>
+                <Typography gutterBottom variant="h5">{yearValue} Budget Analysis</Typography>
               <ResponsiveContainer width="100%" height={300}>
                 <IncomeExpenseAreaChart
                   data={budgetData && getAllBudgetDataByMonth(budgetData)}
