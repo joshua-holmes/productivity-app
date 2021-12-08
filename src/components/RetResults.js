@@ -1,13 +1,13 @@
-import RetAreaChart from "./RetAreaChart";
 import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
 import Grid from '@mui/material/Grid';
 import InputSlider from "./InputSlider";
+import { ResponsiveContainer, AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
-let dollarUSLocale = Intl.NumberFormat("en-US", {
+let formatAsDollar = Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-});
+}).format;
 
 function RetResults({ formData, setFormData }) {
 
@@ -35,8 +35,15 @@ function RetResults({ formData, setFormData }) {
 
     return (
         <Box>
-
-            <RetAreaChart data={graphData}/>
+            <ResponsiveContainer  width="85%" height={300}>
+                <AreaChart data={graphData}>
+                    <Area type="monotone" dataKey="dollars" stroke="#6a1b9a"  fill="#6a1b9a" />
+                    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                    <XAxis dataKey="years" />
+                    <YAxis />
+                    <Tooltip />
+                </AreaChart>
+            </ResponsiveContainer>
 
             <Grid container spacing={8}>
                 <InputSlider
@@ -70,7 +77,7 @@ function RetResults({ formData, setFormData }) {
 
 
 
-            <Typography variant="p">{dollarUSLocale.format(result)}</Typography>
+            <Typography variant="h5">{formatAsDollar(result)}</Typography>
 
         </Box>
     )

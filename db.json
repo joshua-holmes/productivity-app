@@ -171,16 +171,15 @@
         "December": {
           "income": {
             "categories": {
-              "food": 200,
-              "gas": 90,
-              "sdf": "3"
+              "work": 1000
             },
             "total": 290
           },
           "expenses": {
             "categories": {
               "food": 200,
-              "gas": 90
+              "gas": 90,
+              "cell": 100
             },
             "total": 290
           }
@@ -194,9 +193,7 @@
         "January": {
           "income": {
             "categories": {
-              "food": 200,
-              "gas": 90,
-              "sdf": "3"
+              "sdf": 3
             },
             "total": 290
           },

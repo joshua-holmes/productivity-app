@@ -1,15 +1,10 @@
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
-import FormGroup from "@mui/material/FormGroup";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import AddIcon from "@mui/icons-material/Add";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
 import Input from "@mui/material/Input";
 import { useEffect } from "react";
 import BudgetList from "./BudgetList";
+import BudgetFormBody from "./BudgetFormBody";
 
 function Budget() {
     // Data from server
@@ -20,14 +15,14 @@ function Budget() {
     const [formIncomeData, setFormIncomeData] = useState({})
 
     // error handling
-    const [error, setError] = useState({ income: false, expenses: false });
-    console.log(error);
+    const [isError, setIsError] = useState({ income: false, expenses: false });
+
     // Current date
     const newDate = new Date();
     const currentMonthValue = newDate.getMonth() + 1;
     const currentYearValue = newDate.getFullYear();
 
-    // Date state & variables based on date state
+    // Date state & helper variables based off that
     const [yearMonth, setYearMonth] = useState(`${currentYearValue}-${currentMonthValue}`);
     const yearValue = parseInt(yearMonth.slice(0, 4))
     const monthValue = parseInt(yearMonth.slice(-2))
@@ -35,6 +30,13 @@ function Budget() {
     const monthNamelist = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
     const monthName = monthNamelist[monthValue - 1];
 
+    // For currency formatting
+    let formatAsDollar = Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    }).format;
+
+    // Fetch
     useEffect(() => {
         fetch(`http://localhost:3000/budget/${yearToFetch}`)
         .then(r => r.json())
@@ -43,6 +45,7 @@ function Budget() {
         })
     }, [yearToFetch])
 
+    // Handle functions
     function handleChange(e, incomeOrExpenses) {
         let setFormData;
         let formData;
@@ -54,10 +57,9 @@ function Budget() {
             formData = formExpenseData
         }
         // sets income name field state when user types
-        e.preventDefault();
-        setError(() => {
+        setIsError(() => {
             return {
-                ...error,
+                ...isError,
                 [incomeOrExpenses]: false
             }
         });
@@ -68,13 +70,12 @@ function Budget() {
             }
         });
     }
-
     function handleSubmit(incomeOrExpenses) {
-        const form = incomeOrExpenses === "income" ? formIncomeData : formExpenseData
+        const form = ( incomeOrExpenses === "income" ? formIncomeData : formExpenseData )
         if ( Object.keys(form).length === 2 ) {
             const newCategories = {
                 ...budgetData[monthName][incomeOrExpenses].categories,
-                [form.name]: form.amount
+                [form.name]: parseFloat(form.amount)
             }
             const body = {
                 data: {
@@ -98,13 +99,12 @@ function Budget() {
                 setFormExpenseData({})
             })
         } else {
-            setError({
-                ...error,
+            setIsError({
+                ...isError,
                 [incomeOrExpenses]: true
             })
         }
     }
-
     function handleRemove(name, incomeOrExpenses) {
         // gives functionality to the trash icon button
         const categories = budgetData[monthName][incomeOrExpenses].categories;
@@ -132,58 +132,52 @@ function Budget() {
         .then(r => r.json())
         .then(data => setBudgetData(data.data))
     }
-    function changeMonth(e) { setYearMonth(e.target.value) }
+
+    // Get totals for month
+    function getTotals(monthlyData) {
+        const returnedObject = {}
+        let netSum = 0;
+        for ( let incomeOrExpenses in monthlyData ) {
+            const categories = monthlyData[incomeOrExpenses].categories;
+            let sum = 0;
+            for ( let item in categories ) {
+                sum += categories[item];
+            }
+            returnedObject[incomeOrExpenses] = sum;
+            netSum += ( incomeOrExpenses === "income" ? sum : - sum );
+        }
+        returnedObject.net = netSum;
+        return returnedObject;
+    }
+
+    const total = budgetData ? getTotals(budgetData[monthName]) : {}
 
     return (
         <Grid sx={{ mx: 4 }}>
             <Typography variant="h2">Simple Budget</Typography>
+            <Input
+                type="month"
+                value={yearMonth}
+                onChange={e => setYearMonth(e.target.value)}
+                style={{ margin: "10px 0 30px 0" }}
+            /><br/>
 
             <Typography variant="h4" gutterBottom>
                 Income
             </Typography>
-
-            <Input type="month" value={yearMonth} onChange={changeMonth}/>
             <BudgetList
                 incomeOrExpenses="income"
                 handleRemove={handleRemove}
                 budgetData={budgetData}
                 monthName={monthName}
             />
-            <FormControl error={error.income}>
-                <FormHelperText sx={{ m: 1 }} color="warning">
-                    Be sure to enter a unique name and an amount
-                </FormHelperText>
-                <FormGroup row>
-                    <TextField
-                        sx={{ m: 1, minWidth: 120 }}
-                        id="outlined-basic"
-                        label="Income name"
-                        variant="outlined"
-                        onChange={e => handleChange(e, "income")}
-                        name="name"
-                        value={formIncomeData.name || ""}
-                    />
-                    <TextField
-                        sx={{ m: 1, minWidth: 120 }}
-                        id="outlined-number"
-                        label="Amount"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                        onChange={e => handleChange(e, "income")}
-                        name="amount"
-                        value={formIncomeData.amount || ""}
-                    />
-                    <Button
-                        onClick={() => handleSubmit("income")}
-                        sx={{ m: 1 }}
-                        variant="contained"
-                    >
-                        <AddIcon />
-                    </Button>
-                </FormGroup>
-            </FormControl>
+            <BudgetFormBody
+                incomeOrExpenses="income"
+                isError={isError}
+                formData={formIncomeData}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
 
             <Typography variant="h4" gutterBottom>
                 Expenses
@@ -194,51 +188,30 @@ function Budget() {
                 budgetData={budgetData}
                 monthName={monthName}
             />
-            <FormControl error={error.expenses} >
-                <FormHelperText sx={{ m: 1 }} color="warning">
-                    Be sure to enter a unique name and an amount
-                </FormHelperText>
+            <BudgetFormBody
+                incomeOrExpenses="expenses"
+                isError={isError}
+                formData={formExpenseData}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
 
-                <FormGroup row>
-                    <TextField
-                        sx={{ m: 1, minWidth: 120 }}
-                        id="outlined-basic"
-                        label="Expense name"
-                        variant="outlined"
-                        name="name"
-                        onChange={e => handleChange(e, "expenses")}
-                        value={formExpenseData.name || ""}
-                    />
-                    <TextField
-                        sx={{ m: 1, minWidth: 120 }}
-                        id="outlined-number"
-                        label="Amount"
-                        type="number"
-                        name="amount"
-                        InputLabelProps={{
-                                shrink: true,
-                        }}
-                        onChange={e => handleChange(e, "expenses")}
-                        value={formExpenseData.amount || ""}
-                    />
-                    <Button
-                        onClick={() => handleSubmit("expenses")}
-                        sx={{ m: 1 }}
-                        variant="contained"
-                    >
-                        <AddIcon />
-                    </Button>
-                </FormGroup>
-            </FormControl>
-            <Typography variant="h4" gutterBottom>
-                Totals
+            <Typography variant="h4" gutterBottom>Totals</Typography>
+            <Typography variant="h5">
+                Income: {budgetData ? formatAsDollar(total.income) : "loading..."}
             </Typography>
-            <Typography variant="h5">Income: SET</Typography>
-            <Typography variant="h5">Expenses: SET</Typography>
-            <Typography variant="h5">Net: SET</Typography>
-
+            <Typography variant="h5">
+                Expenses: {budgetData ? formatAsDollar(total.expenses) : "loading..."}
+            </Typography>
+            <Typography
+                style={{ color: total.net < 0 ? "red" : "green" }}
+                variant="h5"
+            >
+                Net: {budgetData ? formatAsDollar(total.net) : "loading..."}
+            </Typography>
 
         </Grid>
             );
         }
+
 export default Budget;

@@ -4,6 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import TableRow from "@mui/material/TableRow";
 import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
 
 function BudgetList({ incomeOrExpenses, handleRemove, budgetData, monthName }) {
     function createCategoryArray(incomeOrExpenses) {
@@ -18,21 +19,23 @@ function BudgetList({ incomeOrExpenses, handleRemove, budgetData, monthName }) {
         createCategoryArray(incomeOrExpenses).map((inc) => {
             // an array of our income list items
             return (
-                <TableContainer>
+                <TableContainer key={inc.name}>
                     <Table>
-                        <TableRow key={inc.name}>
-                            <TableCell align="left" sx={{ width: "33%" }}>
-                                {inc.name}
-                            </TableCell>
-                            <TableCell align="center" sx={{ width: "33%" }}>
-                                {inc.amount}
-                            </TableCell>
-                            <TableCell align="right" sx={{ width: "33%" }}>
-                                <IconButton onClick={() => handleRemove(inc.name, incomeOrExpenses)}>
-                                    <DeleteIcon />
-                                </IconButton>
-                            </TableCell>
-                        </TableRow>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell align="left" sx={{ width: "33%" }}>
+                                    {inc.name}
+                                </TableCell>
+                                <TableCell align="center" sx={{ width: "33%" }}>
+                                    {inc.amount}
+                                </TableCell>
+                                <TableCell align="right" sx={{ width: "33%" }}>
+                                    <IconButton onClick={() => handleRemove(inc.name, incomeOrExpenses)}>
+                                        <DeleteIcon />
+                                    </IconButton>
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
                     </Table>
                 </TableContainer>
             );
