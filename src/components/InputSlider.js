@@ -1,7 +1,7 @@
 import Slider from '@mui/material/Slider';
 import Grid from '@mui/material/Grid';
 
-function InputSlider({ name, handleChange, formData, max, min, step, scale, mark }) {
+function InputSlider({ label, name, handleChange, formData, max, min, step, scale, mark }) {
 
     // function calculateValues(max, scale) {
     //     const values = [];
@@ -31,7 +31,7 @@ function InputSlider({ name, handleChange, formData, max, min, step, scale, mark
                 min={min}
                 step={step}
             />
-            <label>{name}</label>
+            <label>{label}</label>
 
         </Grid>
     )

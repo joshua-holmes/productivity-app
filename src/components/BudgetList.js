@@ -19,7 +19,7 @@ function BudgetList({ incomeOrExpenses, handleRemove, budgetData, monthName }) {
         createCategoryArray(incomeOrExpenses).map((inc) => {
             // an array of our income list items
             return (
-                <TableContainer key={inc.name}>
+                <TableContainer key={inc.name} sx={{ mb: 4, px: 1 }}>
                     <Table>
                         <TableBody>
                             <TableRow>
