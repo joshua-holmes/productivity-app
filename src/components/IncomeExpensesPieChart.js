@@ -1,9 +1,13 @@
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
 
-    const [ isMouseHovering, setIsMouseHovering ] = useState(false);
+    // To fix weird chart label issue
+    const [ isAnimation, setIsAnimation ] = useState(false)
+    useEffect(() => {
+        setTimeout(() => setIsAnimation(true), 250)
+    }, [])
 
     function getMonthlyBudgetData(budgetData, monthName, incomeOrExpenses) {
         const returnedArray = [];
@@ -17,7 +21,7 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
         return returnedArray;
     }
     function getPieLabel(data) {
-        return isMouseHovering ? `${data.category} ${formatAsDollar(data.amount)}` : null
+        return `${data.category} ${formatAsDollar(data.amount)}`
     }
     const formatAsDollar = Intl.NumberFormat("en-US", {
         style: "currency",
@@ -46,10 +50,7 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
                         paddingAngle={5}
                         fill="#8884d8"
                         label={getPieLabel}
-                        onMouseEnter={() => setIsMouseHovering(true)}
-                        onMouseLeave={() => setIsMouseHovering(false)}
-                        labelLine={isMouseHovering}
-                        isAnimationActive={false}
+                        isAnimationActive={isAnimation}
                     >
                         {pieData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
