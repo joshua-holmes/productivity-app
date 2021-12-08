@@ -1,6 +1,9 @@
 import { PieChart, Pie, Cell } from "recharts";
+import { useState } from "react";
 
 function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
+
+    const [ isMouseHovering, setIsMouseHovering ] = useState(false);
 
     function getMonthlyBudgetData(budgetData, monthName, incomeOrExpenses) {
         const returnedArray = [];
@@ -14,7 +17,7 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
         return returnedArray;
     }
     function getPieLabel(data) {
-        return `${data.category} ${formatAsDollar(data.amount)}`
+        return isMouseHovering ? `${data.category} ${formatAsDollar(data.amount)}` : null
     }
     const formatAsDollar = Intl.NumberFormat("en-US", {
         style: "currency",
@@ -23,16 +26,14 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042']
     const dataIsLoaded = !!budgetData;
     const pieData = dataIsLoaded && getMonthlyBudgetData(budgetData, monthName, incomeOrExpenses);
-    // const fakeData = [
-    //     {category: "cool thing", amount: 500},
-    //     {category: "stuff", amount: 800},
-    //     {category: "more stuff", amount: 300},
-    //     {category: "hey there", amount: 600},
-    //     {category: "lots of stuff", amount: 200},
-    // ]
+
     const renderChart = () => {
         return (
-            <PieChart width={730} height={250}>
+            <PieChart
+                width={730}
+                height={250}
+
+            >
                 <Pie
                     data={pieData}
                     dataKey="amount"
@@ -44,6 +45,10 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
                     paddingAngle={5}
                     fill="#8884d8"
                     label={getPieLabel}
+                    onMouseEnter={() => setIsMouseHovering(true)}
+                    onMouseLeave={() => setIsMouseHovering(false)}
+                    labelLine={isMouseHovering}
+                    isAnimationActive={false}
                 >
                     {pieData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
