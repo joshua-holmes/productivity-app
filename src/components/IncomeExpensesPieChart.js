@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { PieChart, Pie, Cell } from "recharts";
 import { useState } from "react";
+=======
+import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+>>>>>>> 7930416ca0545ca54032d424b7711ee3ede0cae5
 
 function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
 
@@ -29,6 +33,7 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
 
     const renderChart = () => {
         return (
+<<<<<<< HEAD
             <PieChart
                 width={730}
                 height={250}
@@ -55,6 +60,28 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
                     ))}
                 </Pie>
             </PieChart>
+=======
+            <ResponsiveContainer width="100%">
+                <PieChart>
+                    <Pie
+                        data={pieData}
+                        dataKey="amount"
+                        nameKey="category"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={80}
+                        paddingAngle={5}
+                        fill="#8884d8"
+                        label={getPieLabel}
+                    >
+                        {pieData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                    </Pie>
+                </PieChart>
+            </ResponsiveContainer>
+>>>>>>> 7930416ca0545ca54032d424b7711ee3ede0cae5
         )
     }
     const chart = dataIsLoaded ? renderChart() : null
