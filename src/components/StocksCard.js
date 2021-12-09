@@ -10,13 +10,13 @@ import Button from "@mui/material/Button";
 
 function StocksCard({ obj, handleFave, favedState }) {
   const [faved, setFaved] = useState(favedState);
-  const [changeTime, setTime] = useState("Hour");
+  const [changeTime, setTime] = useState("Hour"); // use state for our hr/day/week buttons
 
   function handleClick(e) {
     setTime(e.target.value);
   }
 
-  let change;
+  let change; // sets price displayed to correspond with state that button produces
   if (changeTime === "Hour") {
     change = obj.priceChange1h;
   } else if (changeTime === "Day") {

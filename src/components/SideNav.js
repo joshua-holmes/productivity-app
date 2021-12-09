@@ -86,7 +86,7 @@ function SideNav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Our App Name
+            Productivity App
           </Typography>
         </Toolbar>
       </AppBar>
