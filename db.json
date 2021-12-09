@@ -308,213 +308,207 @@
         "January": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 5000
+              "rent": 1000.0
             },
-            "total": 5000
+            "total": 1000.0
           }
         },
         "February": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 1250,
-              "food": 1275
+              "rent": 500.0,
+              "food": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           }
         },
         "March": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 5000
+              "rent": 500.0,
+              "food": 625.0
             },
-            "total": 5000
+            "total": 1125.0
           }
         },
         "April": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 1250,
-              "food": 1275
+              "rent": 500.0,
+              "food": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           }
         },
         "May": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 312.5,
-              "food": 318.75,
-              "electricity": 325,
-              "gas": 331.25
+              "rent": 333.33,
+              "food": 388.89,
+              "electricity": 444.44
             },
-            "total": 1287.5
+            "total": 1166.66
           }
         },
         "June": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 312.5,
-              "food": 318.75,
-              "electricity": 325,
-              "gas": 331.25
+              "rent": 500.0,
+              "food": 625.0
             },
-            "total": 1287.5
+            "total": 1125.0
           }
         },
         "July": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 138.89,
-              "food": 141.67,
-              "electricity": 144.44,
-              "gas": 147.22,
-              "cell": 150,
-              "pet food": 152.78
+              "rent": 333.33,
+              "food": 388.89,
+              "electricity": 444.44
             },
-            "total": 874.9999999999999
+            "total": 1166.66
           }
         },
         "August": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 1250,
-              "food": 1275
+              "rent": 166.67,
+              "food": 180.56,
+              "electricity": 194.44,
+              "gas": 208.33,
+              "cell": 222.22,
+              "pet food": 236.11
             },
-            "total": 2525
+            "total": 1208.33
           }
         },
         "September": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 102.04,
-              "food": 104.08,
-              "electricity": 106.12,
-              "gas": 108.16,
-              "cell": 110.2,
-              "pet food": 112.24,
-              "cheez-its": 114.29
+              "rent": 500.0,
+              "food": 625.0
             },
-            "total": 757.13
+            "total": 1125.0
           }
         },
         "October": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 312.5,
-              "food": 318.75,
-              "electricity": 325,
-              "gas": 331.25
+              "rent": 125.0,
+              "food": 132.81,
+              "electricity": 140.62,
+              "gas": 148.44,
+              "cell": 156.25,
+              "pet food": 164.06,
+              "cheez-its": 171.88,
+              "video games": 179.69
             },
-            "total": 1287.5
+            "total": 1218.75
           }
         },
         "November": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 5000
+              "rent": 200.0,
+              "food": 220.0,
+              "electricity": 240.0,
+              "gas": 260.0,
+              "cell": 280.0
             },
-            "total": 5000
+            "total": 1200.0
           }
         },
         "December": {
           "income": {
             "categories": {
-              "work": 1250,
-              "dividends": 1275
+              "work": 500.0,
+              "dividends": 625.0
             },
-            "total": 2525
+            "total": 1125.0
           },
           "expenses": {
             "categories": {
-              "rent": 50,
-              "food": 51,
-              "electricity": 52,
-              "gas": 53,
-              "cell": 54,
-              "pet food": 55,
-              "cheez-its": 56,
-              "video games": 57,
-              "fast food": 58,
-              "liquor": 59
+              "rent": 500.0,
+              "food": 625.0
             },
-            "total": 545
+            "total": 1125.0
           }
         }
       },
