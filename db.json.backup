@@ -1,0 +1,518 @@
+{
+  "favStocks": [
+    {
+      "id": "bitcoin",
+      "icon": "https://static.coinstats.app/coins/Bitcoin6l39t.png",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "rank": 1,
+      "price": 49019.538403605584,
+      "priceBtc": 1,
+      "volume": 35361205854.49401,
+      "marketCap": 926231531066.8881,
+      "availableSupply": 18895150,
+      "totalSupply": 21000000,
+      "priceChange1h": -0.62,
+      "priceChange1d": -3.76,
+      "priceChange1w": -15.03,
+      "websiteUrl": "http://www.bitcoin.org",
+      "twitterUrl": "https://twitter.com/bitcoin",
+      "exp": [
+        "https://blockchair.com/bitcoin/",
+        "https://btc.com/",
+        "https://btc.tokenview.com/"
+      ]
+    },
+    {
+      "id": "ethereum",
+      "icon": "https://static.coinstats.app/coins/EthereumOCjgD.png",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "rank": 2,
+      "price": 4402.286899602929,
+      "priceBtc": 0.08734223109193615,
+      "volume": 38498302613.52592,
+      "marketCap": 522361864439.9895,
+      "availableSupply": 118656933.624,
+      "totalSupply": 0,
+      "priceChange1h": 0,
+      "priceChange1d": 1.1,
+      "priceChange1w": -6.44,
+      "websiteUrl": "https://www.ethereum.org/",
+      "twitterUrl": "https://twitter.com/ethereum",
+      "contractAddress": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "decimals": 18,
+      "exp": [
+        "https://etherscan.io/",
+        "https://ethplorer.io/",
+        "https://blockchair.com/ethereum",
+        "https://eth.tokenview.com/",
+        "https://hecoinfo.com/token/0x64ff637fb478863b7468bc97d30a5bf3a428a1fd",
+        "https://bscscan.com/token/0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "https://snowtrace.io/token/0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15"
+      ]
+    },
+    {
+      "id": "usd-coin",
+      "icon": "https://static.coinstats.app/coins/usd-coiniGm.png",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "rank": 8,
+      "price": 0.999164,
+      "priceBtc": 0.000019800364255791942,
+      "volume": 3462585644,
+      "marketCap": 41039016838,
+      "availableSupply": 41031369067.8562,
+      "totalSupply": 41055438337.4163,
+      "priceChange1h": -0.05,
+      "priceChange1d": -0.05,
+      "priceChange1w": 0.14,
+      "websiteUrl": "https://www.circle.com/en/usdc",
+      "contractAddress": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "decimals": 18,
+      "exp": [
+        "https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "https://ethplorer.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "https://blockchair.com/ethereum/erc-20/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "https://blockscout.com/poa/xdai/tokens/0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83/token-transfers",
+        "https://polygonscan.com/token/0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+        "https://bscscan.com/token/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+        "https://blockexplorer.boba.network/",
+        "https://cronos-explorer.crypto.org/token/0xc21223249ca28397b4b6541dffaecc539bff0c59",
+        "https://snowtrace.io/token/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664"
+      ]
+    }
+  ],
+  "budget": [
+    {
+      "year": 2021,
+      "data": {
+        "January": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 2500
+            },
+            "total": 2500
+          }
+        },
+        "February": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 625,
+              "food": 650
+            },
+            "total": 1275
+          }
+        },
+        "March": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 2500
+            },
+            "total": 2500
+          }
+        },
+        "April": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 625,
+              "food": 650
+            },
+            "total": 1275
+          }
+        },
+        "May": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 156.25,
+              "food": 162.5,
+              "electricity": 168.75,
+              "gas": 175
+            },
+            "total": 662.5
+          }
+        },
+        "June": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 156.25,
+              "food": 162.5,
+              "electricity": 168.75,
+              "gas": 175
+            },
+            "total": 662.5
+          }
+        },
+        "July": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 69.44,
+              "food": 72.22,
+              "electricity": 75,
+              "gas": 77.78,
+              "cell": 80.56,
+              "pet food": 83.33
+            },
+            "total": 458.33
+          }
+        },
+        "August": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 625,
+              "food": 650
+            },
+            "total": 1275
+          }
+        },
+        "September": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 51.02,
+              "food": 53.06,
+              "electricity": 55.1,
+              "gas": 57.14,
+              "cell": 59.18,
+              "pet food": 61.22,
+              "cheez-its": 63.27
+            },
+            "total": 399.99
+          }
+        },
+        "October": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 156.25,
+              "food": 162.5,
+              "electricity": 168.75,
+              "gas": 175
+            },
+            "total": 662.5
+          }
+        },
+        "November": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 2500
+            },
+            "total": 2500
+          }
+        },
+        "December": {
+          "income": {
+            "categories": {
+              "work": 625,
+              "dividends": 650
+            },
+            "total": 1275
+          },
+          "expenses": {
+            "categories": {
+              "rent": 25,
+              "food": 26,
+              "electricity": 27,
+              "gas": 28,
+              "cell": 29,
+              "pet food": 30,
+              "cheez-its": 31,
+              "video games": 32,
+              "fast food": 33,
+              "liquor": 34
+            },
+            "total": 295
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "year": 2022,
+      "data": {
+        "January": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 1000.0
+            },
+            "total": 1000.0
+          }
+        },
+        "February": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 500.0,
+              "food": 625.0
+            },
+            "total": 1125.0
+          }
+        },
+        "March": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 500.0,
+              "food": 625.0
+            },
+            "total": 1125.0
+          }
+        },
+        "April": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 500.0,
+              "food": 625.0
+            },
+            "total": 1125.0
+          }
+        },
+        "May": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 333.33,
+              "food": 388.89,
+              "electricity": 444.44
+            },
+            "total": 1166.66
+          }
+        },
+        "June": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 500.0,
+              "food": 625.0
+            },
+            "total": 1125.0
+          }
+        },
+        "July": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 333.33,
+              "food": 388.89,
+              "electricity": 444.44
+            },
+            "total": 1166.66
+          }
+        },
+        "August": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 166.67,
+              "food": 180.56,
+              "electricity": 194.44,
+              "gas": 208.33,
+              "cell": 222.22,
+              "pet food": 236.11
+            },
+            "total": 1208.33
+          }
+        },
+        "September": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 500.0,
+              "food": 625.0
+            },
+            "total": 1125.0
+          }
+        },
+        "October": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 125.0,
+              "food": 132.81,
+              "electricity": 140.62,
+              "gas": 148.44,
+              "cell": 156.25,
+              "pet food": 164.06,
+              "cheez-its": 171.88,
+              "video games": 179.69
+            },
+            "total": 1218.75
+          }
+        },
+        "November": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 200.0,
+              "food": 220.0,
+              "electricity": 240.0,
+              "gas": 260.0,
+              "cell": 280.0
+            },
+            "total": 1200.0
+          }
+        },
+        "December": {
+          "income": {
+            "categories": {
+              "work": 500.0,
+              "dividends": 625.0
+            },
+            "total": 1125.0
+          },
+          "expenses": {
+            "categories": {
+              "rent": 500.0,
+              "food": 625.0
+            },
+            "total": 1125.0
+          }
+        }
+      },
+      "id": 2
+    }
+  ]
+}
