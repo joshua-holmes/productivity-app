@@ -42,7 +42,7 @@ npm start
 ## Authors
 
 Joshua Holmes \
-[GitHub](https://github.com/joshua-holmes)
+[GitHub](https://github.com/joshua-holmes) \
 [Personal Website](https://joshua-holmes.github.io/joshua-holmes-website/) \
 [LinkedIn](https://www.linkedin.com/in/joshua-phillip-holmes/) \
 <joshua.phillip.holmes@gmail.com>
