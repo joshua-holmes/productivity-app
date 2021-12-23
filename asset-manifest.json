@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/productivity-app/static/css/main.a617e044.chunk.css",
+    "main.js": "/productivity-app/static/js/main.350549d0.chunk.js",
+    "main.js.map": "/productivity-app/static/js/main.350549d0.chunk.js.map",
+    "runtime-main.js": "/productivity-app/static/js/runtime-main.d0b18f53.js",
+    "runtime-main.js.map": "/productivity-app/static/js/runtime-main.d0b18f53.js.map",
+    "static/css/2.f3264529.chunk.css": "/productivity-app/static/css/2.f3264529.chunk.css",
+    "static/js/2.fbd7b0cd.chunk.js": "/productivity-app/static/js/2.fbd7b0cd.chunk.js",
+    "static/js/2.fbd7b0cd.chunk.js.map": "/productivity-app/static/js/2.fbd7b0cd.chunk.js.map",
+    "static/js/3.a6b35af2.chunk.js": "/productivity-app/static/js/3.a6b35af2.chunk.js",
+    "static/js/3.a6b35af2.chunk.js.map": "/productivity-app/static/js/3.a6b35af2.chunk.js.map",
+    "index.html": "/productivity-app/index.html",
+    "static/css/2.f3264529.chunk.css.map": "/productivity-app/static/css/2.f3264529.chunk.css.map",
+    "static/css/main.a617e044.chunk.css.map": "/productivity-app/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.fbd7b0cd.chunk.js.LICENSE.txt": "/productivity-app/static/js/2.fbd7b0cd.chunk.js.LICENSE.txt",
+    "static/media/300.css": "/productivity-app/static/media/roboto-vietnamese-300-normal.af9afdc1.woff2",
+    "static/media/400.css": "/productivity-app/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2",
+    "static/media/500.css": "/productivity-app/static/media/roboto-vietnamese-500-normal.b8e494da.woff2",
+    "static/media/700.css": "/productivity-app/static/media/roboto-vietnamese-700-normal.3096f18a.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d0b18f53.js",
+    "static/css/2.f3264529.chunk.css",
+    "static/js/2.fbd7b0cd.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.350549d0.chunk.js"
+  ]
+}
