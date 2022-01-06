@@ -16,7 +16,7 @@ function Dashboard({ stockFaves, handleFave, currentMonthYear }) {
   // Date state & helper variables based off that
   const [yearMonth, setYearMonth] = useState(currentMonthYear);
   const yearValue = parseInt(yearMonth.slice(0, 4));
-  const monthValue = parseInt(yearMonth.slice(-2));
+  const monthValue = parseInt(yearMonth.slice(yearMonth.search("-") + 1));
   const yearToFetch =
     yearValue >= 2021 ? parseInt(yearMonth.slice(2, 4)) - 20 : null;
   const monthNamelist = [

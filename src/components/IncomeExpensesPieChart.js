@@ -8,7 +8,6 @@ function IncomeExpensesPieChart({ budgetData, incomeOrExpenses, monthName }) {
     useEffect(() => {
         setTimeout(() => setIsAnimation(true), 250)
     }, [])
-
     function getMonthlyBudgetData(budgetData, monthName, incomeOrExpenses) {
         const returnedArray = [];
         const categories = budgetData[monthName][incomeOrExpenses].categories;

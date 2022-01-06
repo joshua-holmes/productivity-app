@@ -34,7 +34,7 @@ function SideNav(props) {
   ];
 
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [ mobileOpen, setMobileOpen ] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
